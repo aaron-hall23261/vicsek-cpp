@@ -3,17 +3,17 @@
 
 #include <iostream>
 #include <vector> //to use standard C++ vectors
-//#include "box.h" //yet to be created!
+#include "box.h" //yet to be created!
 //#include "particle.h" //yet to be created!
 
 class System {
   public:
     System(int particleNumber,double sideLength, double timeStep,double noiseStrength);
-    int   particleNumber;
+    int particleNumber;
     double sideLength;
     double timeStep;
     double noiseStrength;
-    //Box simulationBox;
+    Box simulationBox;
     //std::vector<Particle> particles;
 
     void updateRule();

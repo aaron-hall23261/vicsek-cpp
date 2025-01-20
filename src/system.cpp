@@ -5,6 +5,7 @@ System::System(int particleNumber,double sideLength, double timeStep,double nois
     this->sideLength = sideLength;
     this->timeStep = timeStep;
     this->noiseStrength = noiseStrength;
+    this->simulationBox = Box(sideLength, sideLength, 0, 0);
 }
 
 void System::updateRule(){
