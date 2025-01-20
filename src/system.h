@@ -2,22 +2,27 @@
 #define SYSTEM_H
 
 #include <iostream>
+#include <random>
 #include <vector> //to use standard C++ vectors
 #include "box.h" //yet to be created!
-//#include "particle.h" //yet to be created!
+#include "particle.h" //yet to be created!
 
 class System {
   public:
-    System(int particleNumber,double sideLength, double timeStep,double noiseStrength);
+    System(int particleNumber,double sideLength, double timeStep,double noiseStrength, int seed);
+
     int particleNumber;
     double sideLength;
     double timeStep;
     double noiseStrength;
     Box simulationBox;
-    //std::vector<Particle> particles;
+    std::vector<Particle> particles;
+    std::mt19937 gen;
+    std::uniform_real_distribution<double> uniformDist;
 
     void updateRule();
     void printValues();
+    double uniform(double min, double max);
 };
 
 #endif
