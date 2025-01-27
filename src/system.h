@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <random>
+#include <math.h>
+#include <string>
+#include <fstream>
 #include <vector> //to use standard C++ vectors
 #include "box.h" //yet to be created!
 #include "particle.h" //yet to be created!
@@ -23,6 +26,8 @@ class System {
     void updateRule();
     void printValues();
     double uniform(double min, double max);
+    void randomStart();
+    void saveConfig(const std::string &filename);
 };
 
 #endif
